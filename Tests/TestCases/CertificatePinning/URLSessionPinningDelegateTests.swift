@@ -20,23 +20,23 @@ struct URLSessionPinningDelegateTests {
     }
     
     private struct TestCases {
-        static let whenChallengeIsNilExpectInvalidResults = TestMetadata(challenge: Stubs.CertificatePinner.fakeChallenge(with: nil),
+        static let whenChallengeIsNilExpectInvalid = TestMetadata(challenge: Stubs.CertificatePinner.fakeChallenge(with: nil),
                                                                          certificatePinnerIsServerTrustedResult: false,
                                                                          credentialResult: nil,
                                                                          result: .cancelAuthenticationChallenge)
-        static let whenChallengeIsValidAndServerIsNotTrustedExpectInvalidResults = TestMetadata(challenge: Stubs.CertificatePinner.fakeChallenge(with: Stubs.CertificatePinner.certificate),
+        static let whenChallengeIsValidAndServerIsNotTrustedExpectInvalid = TestMetadata(challenge: Stubs.CertificatePinner.fakeChallenge(with: Stubs.CertificatePinner.certificate),
                                                                                                 certificatePinnerIsServerTrustedResult: false,
                                                                                                 credentialResult: nil,
                                                                                                 result: .cancelAuthenticationChallenge)
-        static let whenChallengeIsValidAndServerIsTrustedExpectValidResults = TestMetadata(challenge: Stubs.CertificatePinner.fakeChallenge(with: Stubs.CertificatePinner.certificate),
+        static let whenChallengeIsValidAndServerIsTrustedExpectValid = TestMetadata(challenge: Stubs.CertificatePinner.fakeChallenge(with: Stubs.CertificatePinner.certificate),
                                                                                            certificatePinnerIsServerTrustedResult: true,
                                                                                            credentialResult: URLCredential(trust: Stubs.CertificatePinner.fakeChallenge(with: Stubs.CertificatePinner.certificate).protectionSpace.serverTrust!),
                                                                                            result: .useCredential)
     }
     
-    @Test(arguments: [TestCases.whenChallengeIsNilExpectInvalidResults,
-                      TestCases.whenChallengeIsValidAndServerIsNotTrustedExpectInvalidResults,
-                      TestCases.whenChallengeIsValidAndServerIsTrustedExpectValidResults])
+    @Test(arguments: [TestCases.whenChallengeIsNilExpectInvalid,
+                      TestCases.whenChallengeIsValidAndServerIsNotTrustedExpectInvalid,
+                      TestCases.whenChallengeIsValidAndServerIsTrustedExpectValid])
     func urlSessionTests(metadata: TestMetadata) async {
         await confirmation("") { confirmation in
             let (sut, mock) = sut()
