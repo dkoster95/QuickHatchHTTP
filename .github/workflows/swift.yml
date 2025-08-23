@@ -17,7 +17,9 @@ jobs:
     steps:
     - uses: swift-actions/setup-swift@v2
     - name: Get swift version
-      run: swift --version 
+      run: swift --version
+    - name: List directories
+      run: ls -lha
     - name: Build
       run: swift build -v
     - name: Run tests
