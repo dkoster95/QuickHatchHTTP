@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "2E7E9569-63D0-4C75-A2C3-B480444E7054",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:",
+          "identifier" : "QuickHatchHTTP",
+          "name" : "QuickHatchHTTP"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "QuickHatchHTTPTests",
+        "name" : "QuickHatchHTTPTests"
+      }
+    }
+  ],
+  "version" : 1
+}
