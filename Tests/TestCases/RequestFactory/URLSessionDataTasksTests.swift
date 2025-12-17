@@ -10,7 +10,6 @@ import Testing
 import QuickHatchHTTP
 import Foundation
 
-
 struct URLSessionDataTasksTests {
 
     @Test(arguments: [(RequestError.cancelled, false), (RequestError.unauthorized, true)])
