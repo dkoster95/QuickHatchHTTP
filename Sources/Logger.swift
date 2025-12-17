@@ -8,8 +8,6 @@
 
 import Foundation
 
-//public let log = Log("🌐QuickHatch🌐 -")
-
 public struct LogsShortcuts {
     public static let quickhatch = "🌐QuickHatch🌐 - "
     public static let commandModule = "\(LogsShortcuts.quickhatch)Command -> "
