@@ -1,0 +1,38 @@
+//
+//  NetworkRequestFactoryErrorValidator.swift
+//  QuickHatchHTTP
+//
+//  Created by Daniel Koster on 6/5/19.
+//  Copyright © 2019 DaVinci Labs. All rights reserved.
+//
+
+import Foundation
+
+class NetworkRequestFactoryErrorValidator {
+    static func validate(data: Data?,
+                         response: URLResponse?,
+                         error: Error? = nil) -> RequestError? {
+        if let urlError = error as? URLError,
+           urlError.code == URLError.cancelled {
+            return RequestError.cancelled
+        }
+        guard error == nil || !error!.requestWasCancelled else {
+            return RequestError.cancelled
+        }
+        guard let urlResponse = response as? HTTPURLResponse else {
+            return RequestError.noResponse
+        }
+        guard urlResponse.statusCode >= 200 && urlResponse.statusCode <= 201 else {
+            var error = RequestError.unknownError(statusCode: urlResponse.statusCode)
+            if let httpStatusCode = HTTPStatusCode(rawValue: urlResponse.statusCode) {
+                error = RequestError.requestWithError(statusCode: httpStatusCode)
+            }
+            return error
+        }
+        guard data != nil else {
+            return RequestError.noResponse
+            
+        }
+        return nil
+    }
+}
