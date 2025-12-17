@@ -9,7 +9,7 @@
 import Foundation
 import QuickHatchHTTP
 
-class URLSessionMockWithDelay: URLSessionProtocolMock {
+class URLSessionMockWithDelay: URLSessionProtocolMock, @unchecked Sendable {
     private var delay: Double
     
     init(data: Data? = nil, error: Error? = nil, urlResponse: URLResponse? = nil, delay: Double) {

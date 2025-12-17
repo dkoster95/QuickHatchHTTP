@@ -8,7 +8,7 @@
 
 import Foundation
 
-class URLSessionDownloadMock: URLSession {
+class URLSessionDownloadMock: URLSession, @unchecked Sendable {
     private let downloadingURL: URL?
     private let error: Error?
     private let urlResponse: URLResponse?
