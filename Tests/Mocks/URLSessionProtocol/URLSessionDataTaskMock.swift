@@ -8,7 +8,7 @@
 
 import Foundation
 
-class URLSessionDataTaskMock: URLSessionDataTask {
+class URLSessionDataTaskMock: URLSessionDataTask, @unchecked Sendable {
     
     private let closure: () -> Void
     
@@ -21,7 +21,7 @@ class URLSessionDataTaskMock: URLSessionDataTask {
     }
 }
 
-class URLSessionDataTaskMockWithDelay: URLSessionDataTaskMock {
+class URLSessionDataTaskMockWithDelay: URLSessionDataTaskMock, @unchecked Sendable {
     private let delay: Double
     
     init(delay: Double, closure: @escaping () -> Void) {
@@ -40,7 +40,7 @@ class URLSessionDataTaskMockWithDelay: URLSessionDataTaskMock {
     }
 }
 
-class FakeURLSessionDataTask: URLSessionDataTask {
+class FakeURLSessionDataTask: URLSessionDataTask, @unchecked Sendable {
     public var resumed = false
     override func resume() {
         resumed = true

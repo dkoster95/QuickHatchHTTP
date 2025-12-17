@@ -24,8 +24,8 @@ public struct URLSessionMocks {
         return Data()
     }
     
-    public static func anyURLSessionLayer(urlSession: URLSessionProtocol) -> URLSessionRequestFactory {
-        let urlSessionLayer = URLSessionRequestFactory(urlSession: urlSession)
-        return urlSessionLayer
+    public static func anyResponse(withData: Data? = nil, withStatusCode: Int = 200) -> HTTPResponse {
+        return QHHTTPResponse(body: withData, urlResponse: anyResponse(statusCode: withStatusCode))
     }
+
 }
