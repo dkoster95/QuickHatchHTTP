@@ -18,17 +18,15 @@
 - **NetworkRequestFactory protocol**:
 	- [Getting started](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/GettingStarted.md)
 	- [Codable extension](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/CodableExtensions.md)
-	- [Data, String responses](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/Responses.md)
+	- [Data responses](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/Responses.md)
 	- [Combine Support](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/CombineSupport.md)
 	- [Errors](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/Error.md)
-- **URLRequest Additions**:
-	- [HTTP Methods oriented](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/URLRequestExtension.md)
 - **Parameter Encoding**
 	- [URLEncoding](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/URLEncoding.md)
 	- [JSONEncoding](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/JSONEncoding.md)
 	- [StringEncoding](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/StringEncoding.md)
 - **Request/Response Pattern**
-	- [Index](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/HostEnvironment.md)
+	- [Index](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/Request-Response.md)
 - **Certificate Pinning**
 	- [Index](https://github.com/dkoster95/QuickHatchHTTP/blob/main/Docs/CertificatePinning.md)
 ---
