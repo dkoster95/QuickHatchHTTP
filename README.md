@@ -2,8 +2,8 @@
 
 # QuickHatchHTTP
 
-[![Swift](https://img.shields.io/badge/Swift-6.0)](https://img.shields.io/badge/Swift-6.0)
-[![Platforms](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_visionOS_Linux_Windows_Android-yellowgreen)](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_vision_OS_Linux_Windows_Android-Green)
+[![Swift](https://img.shields.io/badge/Swift-6.0-green)](https://img.shields.io/badge/Swift-6.0-green)
+[![Platforms](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_visionOS_Linux_Windows_Android-green)](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_vision_OS_Linux_Windows_Android-Green)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-green)](https://img.shields.io/badge/Swift_Package_Manager-compatible-green)
 - **Use an abstract networking layer**
 - **Request/Response Pattern**
