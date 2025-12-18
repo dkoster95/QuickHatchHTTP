@@ -6,14 +6,17 @@
 - What QuickHatch provides is a set of protocols that allows you to follow clean code standards, SOLID principles and allows you to be flexible when it comes to Networking.
 - First of all, your app will use a NetworkClient (this can be Alamofire, etc), and QuickHatch provides a protocol called NetworkRequestFactory that sets what a network client should respond when making a request.
 
-![](https://github.com/dkoster95/QuickHatchSwift/blob/master/diagram.png)
+![](https://github.com/dkoster95/QuickHatchHTTP/blob/main/diagram.png)
 
-The name of this networkLayer interface in QuickHatch is NetworkRequestFactory :).
+The name of this networkLayer interface in QuickHatchHTTP is NetworkRequestFactory :).
 ```swift
 
 public protocol NetworkRequestFactory { 
-    func data(request: URLRequest, dispatchQueue: DispatchQueue, completionHandler completion: @escaping DataCompletionHandler) -> Request
-	func data(request: URLRequest, dispatchQueue: DispatchQueue) -> AnyPublisher<Data,Error>
+        func data(request: URLRequest,
+                  dispatchQueue: DispatchQueue,
+                  completionHandler completion: @Sendable @escaping (Result<HTTPResponse, Error>) -> Void) -> DataTask
+        func dataPublisher(request: URLRequest) -> AnyPublisher<HTTPResponse,Error>
+        func data(request: URLRequest) async throws -> HTTPResponse
 }	
 ```
 

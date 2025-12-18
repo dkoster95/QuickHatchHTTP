@@ -1,5 +1,5 @@
-## **URLRequest Extension**
-- QuickHatch provides an extension of URLRequest for you to build the requests easier and faster
+## **Request/Response Pattern**
+- QuickHatchHTTP provides an easy way to create a request and fetch the response like Python Requests does
 ```swift
 public extension URLRequest {
     

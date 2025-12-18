@@ -1,16 +1,16 @@
 ## **Errors**
-- If an error is returned in a network request QuickHatch provides an enum with errors
+- If an error is returned in a network request QuickHatchHTTP provides an enum with errors
 ```swift
 public enum RequestError: Error, Equatable {
     case unauthorized
     case unknownError(statusCode: Int)
     case cancelled
     case noResponse
-    case requestWithError(statusCode:HTTPStatusCode)
-    case serializationError
+    case requestWithError(statusCode: HTTPStatusCode)
+    case serializationError(error: Error)
     case invalidParameters
-    case noInternetConnection
     case malformedRequest
+    case other(error: Error)
 }	
 ```
 Now if we want to check what error is..

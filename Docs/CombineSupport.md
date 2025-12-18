@@ -2,19 +2,9 @@
 
 The network Request Factory also has support for swift Combine if you decide to go full Reactive programming.
 
-```swift
-    func image(urlRequest: URLRequest,
-               dispatchQueue: DispatchQueue = .main,
-               quality: CGFloat) -> AnyPublisher<UIImage, Error>
-    
-    func response<CodableData: Codable>(urlRequest: URLRequest,
-                                        dispatchQueue: DispatchQueue = .main,
-                                        jsonDecoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<CodableData, Error>
-    
-    func string(urlRequest: URLRequest,
-                dispatchQueue: DispatchQueue = .main,
-                jsonDecoder: JSONDecoder = JSONDecoder())-> AnyPublisher<String, Error>
-
+```swift    
+        func response<CodableData: Codable>(urlRequest: URLRequest,
+                                            jsonDecoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<Response<CodableData>, Error> 
 ```
 This is a sample for a **response** mapping using QuickHatch Combine function:
 
