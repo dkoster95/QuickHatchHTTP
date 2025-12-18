@@ -8,7 +8,7 @@
 
 import Foundation
 
-class URLSessionDownloadTaskMock: URLSessionDownloadTask {
+class URLSessionDownloadTaskMock: URLSessionDownloadTask, @unchecked Sendable {
     private let closure: () -> Void
     
     init(closure: @escaping () -> Void) {
