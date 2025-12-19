@@ -25,7 +25,7 @@ public protocol HTTPRequestActionable {
     var responsePublisher: any Publisher<HTTPResponse, Error> { get }
 }
 
-public protocol HTTPRequestDecodedActionable {
+public protocol HTTPRequestDecodedActionable<ResponseType> {
     associatedtype ResponseType: Codable
     func responseDecoded() async throws -> Response<ResponseType>
     var responseDecodedPublisher: any Publisher<ResponseType, Error> { get }
