@@ -8,7 +8,7 @@ import QuickHatchHTTP
 import Foundation
 import Combine
 
-public class PinningStrategyMock: PinningStrategy {
+public class PinningStrategyMock: PinningStrategy, @unchecked Sendable {
     
     public var invokedValidate = false
     public var invokedValidateCount = 0
@@ -29,7 +29,7 @@ public class PinningStrategyMock: PinningStrategy {
     }
 }
 
-public class CertificatePinnerMock: CertificatePinner {
+public class CertificatePinnerMock: CertificatePinner, @unchecked Sendable {
 
     public init() {
         
@@ -72,7 +72,7 @@ public final class MockURLProtectionSpace: URLProtectionSpace, @unchecked Sendab
     }
 }
 
-public final class NetworkRequestFactoryMock: NetworkRequestFactory {
+public final class NetworkRequestFactoryMock: NetworkRequestFactory, @unchecked Sendable {
 
     public var invokedDataRequest = false
     public var invokedDataRequestCount = 0

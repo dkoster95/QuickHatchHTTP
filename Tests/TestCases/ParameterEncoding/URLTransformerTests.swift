@@ -38,7 +38,7 @@ struct URLTransformerTests {
                                                                               urlResult: "https://quickhatch.com")
         static let whenParametersExpectURLTransformed = URLTransformerTestMetadata(url: "https://quickhatch.com/{name}/{age}",
                                                                                    parameters: ["name": "quickhatch", "age": 20],
-                                                                                   urlResult: EncodingHelpers.escape("https://quickhatch.com/quickhatch/20"))
+                                                                                   urlResult: "https://quickhatch.com/quickhatch/20")
     }
     
     @Test(arguments: [DefaultURLTransformerTestCases.whenEmptyURLExpectSameURL,

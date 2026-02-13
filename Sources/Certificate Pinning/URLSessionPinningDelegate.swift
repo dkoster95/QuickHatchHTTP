@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol URLSessionPinningDelegateAdaptable {
+public protocol URLSessionPinningDelegateAdaptable: Sendable {
     func urlSession(didReceive challenge: URLAuthenticationChallenge,
                     completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)
 }

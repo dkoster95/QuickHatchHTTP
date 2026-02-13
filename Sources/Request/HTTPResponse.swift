@@ -7,9 +7,9 @@
 
 import Foundation
 
-public protocol HTTPResponse {
+public protocol HTTPResponse: Sendable {
     var statusCode: HTTPStatusCode { get }
-    var headers: [AnyHashable: Any] { get }
+    var headers: [String: String] { get }
     var body: Data? { get }
 }
 
@@ -25,12 +25,12 @@ public extension HTTPResponse {
 
 public struct QHHTTPResponse: HTTPResponse {
     public let statusCode: HTTPStatusCode
-    public let headers: [AnyHashable : Any]
+    public let headers: [String : String]
     public let body: Data?
     
     public init(body: Data?, urlResponse: URLResponse) {
         self.body = body
-        self.headers = (urlResponse as? HTTPURLResponse)?.allHeaderFields ?? [:]
+        self.headers = ((urlResponse as? HTTPURLResponse)?.allHeaderFields as? [String: String]) ?? [:]
         self.statusCode = HTTPStatusCode(rawValue: (urlResponse as? HTTPURLResponse)?.statusCode ?? -1) ?? .serviceUnavailable
     }
 }

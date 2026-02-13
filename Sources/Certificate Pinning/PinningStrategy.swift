@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol PinningStrategy {
+public protocol PinningStrategy: Sendable {
     func validate(serverTrust: SecTrust) -> Bool
 }

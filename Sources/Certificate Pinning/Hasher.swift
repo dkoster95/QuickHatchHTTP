@@ -9,11 +9,11 @@
 import Foundation
 import CryptoKit
 
-public protocol Hasher {
+public protocol Hasher: Sendable {
     func hash(data: Data) -> String
 }
 
-public class CKSHA256Hasher: Hasher {
+public final class CKSHA256Hasher: Hasher {
     
     public init() {
         
