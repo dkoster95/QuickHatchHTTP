@@ -9,9 +9,9 @@
 import Foundation
 
 public struct CertificatePinningStrategy: PinningStrategy {
-    private let certificateBuilders: [() -> SecCertificate]
+    private let certificateBuilders: [@Sendable () -> SecCertificate]
     
-    public init(certificateBuilders: [() -> SecCertificate]) {
+    public init(certificateBuilders: [@Sendable () -> SecCertificate]) {
         self.certificateBuilders = certificateBuilders
     }
     

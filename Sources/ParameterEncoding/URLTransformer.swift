@@ -39,9 +39,9 @@ public struct ParameterMappingURLTransformer: URLTransformer {
         guard !url.isEmpty else { return url }
         let parameters = parameters.flatMap { (key, value) in EncodingHelpers.queryComponents(fromKey: key, value: value) }
         guard !parameters.isEmpty else { return url }
-        var urlResult = EncodingHelpers.escape(url)
+        var urlResult = url
         for (key, value) in parameters {
-            let escapedKey = EncodingHelpers.escape("{\(key)}")
+            let escapedKey = "{\(key)}"
             urlResult = urlResult.replacingOccurrences(of: escapedKey, with: value)
         }
         return urlResult

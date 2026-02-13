@@ -59,6 +59,11 @@ public class StringEncoding: ParameterEncoding {
 }
 
 public struct StringURLTransformer: URLTransformer {
+    
+    public init() {
+        
+    }
+    
     public func transform(url: String, parameters: [String : any Sendable]) -> String {
         guard !parameters.isEmpty else { return url }
         var urlString = url

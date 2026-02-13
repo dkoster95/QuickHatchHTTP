@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-public protocol NetworkRequestFactory {
+public protocol NetworkRequestFactory: Sendable {
     func data(request: URLRequest,
               dispatchQueue: DispatchQueue,
               completionHandler completion: @Sendable @escaping (Result<HTTPResponse, Error>) -> Void) -> DataTask

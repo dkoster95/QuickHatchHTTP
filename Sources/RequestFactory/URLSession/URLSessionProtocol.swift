@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-public protocol URLSessionProtocol {
+public protocol URLSessionProtocol: Sendable {
     func task(with request: URLRequest, completionHandler: @Sendable @escaping (Data?, URLResponse?, Error?) -> Void) -> DataTask
     
     func task(request: URLRequest) async throws -> (Data, URLResponse)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol CertificatePinner {
+public protocol CertificatePinner: Sendable {
     func isServerTrusted(challenge: URLAuthenticationChallenge) -> Bool
 }
 

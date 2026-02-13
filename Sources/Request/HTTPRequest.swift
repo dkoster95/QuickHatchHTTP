@@ -7,25 +7,25 @@
 import Foundation
 import Combine
 
-public protocol DataTask: NSObjectProtocol {
+public protocol DataTask: NSObjectProtocol, Sendable {
     func resume()
     func suspend()
     func cancel()
 }
 
-public protocol HTTPRequest {
+public protocol HTTPRequest: Sendable {
     var headers: [String: String] { get }
     var body: Data? { get }
     var url: String { get }
     var method: HTTPMethod { get }
 }
 
-public protocol HTTPRequestActionable {
+public protocol HTTPRequestActionable: Sendable {
     func response() async throws -> HTTPResponse
     var responsePublisher: any Publisher<HTTPResponse, Error> { get }
 }
 
-public protocol HTTPRequestDecodedActionable<ResponseType> {
+public protocol HTTPRequestDecodedActionable<ResponseType>: Sendable {
     associatedtype ResponseType: Codable
     func responseDecoded() async throws -> Response<ResponseType>
     var responseDecodedPublisher: any Publisher<ResponseType, Error> { get }
